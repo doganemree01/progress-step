@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+:root{
+    --line-border-fill: #0039a6;
+    --line-border-emty: #E1EBEE;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: #AFDBF5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+    overflow: hidden;
+}
+.container{
+    text-align: center;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 350px;
+    margin-bottom: 40px;
+    max-width: 100%;
+}
+
+.progress-container::before{
+    content: '';
+    background-color:  var(--line-border-emty);
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.progress{
+    background-color: var(--line-border-fill);
+    height: 4px;
+    width: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .4s ease;
+}
+
+.circle{
+    background-color: #fff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid var(--line-border-emty);
+    transition: .4s ease;
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: #fff;
+    border: 0;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    padding: 9px 40px;
+    font-size: 16px;
+    margin: 6px;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-emty);
+    color: #111;
+}
